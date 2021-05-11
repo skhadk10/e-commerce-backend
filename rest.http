@@ -1,0 +1,19 @@
+### create new user
+POST  http://localhost:8000/api/v1/Clientuser
+Content-Type:  application/json
+   
+{
+  "fName":"sanish",
+  "lName":"khadka",
+    "email":"sanishkhadka1@gmail.com",
+    "password": "123456",
+    "role":"user"
+}
+### login user
+POST  http://localhost:8000/api/v1/Clientlogin
+Content-Type: application/json
+
+{
+   "email":"sanishkhadka1@gmail.com",
+    "password": "123456",
+}
