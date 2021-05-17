@@ -28,7 +28,7 @@ router.post("/", newUservalidation, async (req, res) => {
     if (result?._id) {
       return res.json({
         status: "success",
-        message: "login success",
+        message: "New Account created successfully",
         result,
       });
     }
