@@ -18,3 +18,7 @@ Content-Type:  application/json
     "password": "123456"
 }
 
+
+### product display 
+GET  http://localhost:8000/api/v1/productdisplay/60a20dfb7fdc67321010e08e
+

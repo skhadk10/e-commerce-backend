@@ -1,7 +1,8 @@
 import express from "express";
 import { hashPassword } from "../helper/bycrpt.js";
 import { newUservalidation } from "../middleware/formvalidation.js";
-import { createUser } from "../user/user.model.js";
+import { createUser } from "../model/user/user.model.js";
+
 const router = express.Router();
 
 router.all("*", (req, res, next) => {

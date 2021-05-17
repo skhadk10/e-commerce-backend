@@ -2,7 +2,8 @@ import express from "express";
 import { comparePassword } from "../helper/bycrpt.js";
 import { createAccessJWT, createRefreshJWT } from "../helper/jwt.helper.js";
 import { loginValidation } from "../middleware/formvalidation.js";
-import { getUserByEmail } from "../user/user.model.js";
+import { getUserByEmail } from "../model/user/user.model.js";
+
 const router = express.Router();
 
 router.all("*", (req, res, next) => {

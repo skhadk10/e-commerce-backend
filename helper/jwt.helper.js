@@ -1,9 +1,6 @@
 import jwt from "jsonwebtoken";
-import {
-
-  storeAccessJwt,
-} from "../ClientSession/ClientSession.model.js";
-import { storeRefresJWT } from "../user/user.model.js";
+import { storeAccessJwt } from "../ClientSession/ClientSession.model.js";
+import { storeRefresJWT } from "../model/user/user.model.js";
 
 export const createAccessJWT = (email, _id) => {
   return new Promise((resolve, reject) => {
@@ -25,7 +22,6 @@ export const createAccessJWT = (email, _id) => {
   });
 };
 
-
 export const createRefreshJWT = (email, _id) => {
   return new Promise((resolve, reject) => {
     try {
@@ -39,16 +35,16 @@ export const createRefreshJWT = (email, _id) => {
     }
   });
 };
-export const verifyAccessjwt=accessJWT=>{
-  return new Promise((resolve,reject)=>{
+export const verifyAccessjwt = (accessJWT) => {
+  return new Promise((resolve, reject) => {
     try {
       const decoded = jwt.verify(accessJWT, process.env.JWT_ACCESS_SECRECT);
       resolve(decoded);
     } catch (error) {
       reject(false);
     }
-  })
-}
+  });
+};
 
 export const verifyRefreshjwt = (refreshJWT) => {
   return new Promise((resolve, reject) => {
