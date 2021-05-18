@@ -1,5 +1,5 @@
 import express from "express";
-import { getProductById } from "../model/product/clientProduct.model.js";
+import { getProduct } from "../model/product/clientProduct.model.js";
 
 const router = express.Router();
 
@@ -7,20 +7,24 @@ router.all("*", (req, res, next) => {
   next();
 });
 
-router.get("/:_id?", async (req, res) => {
-  console.log(req.params);
+router.get("/", async (req, res) => {
+  console.log("hello from router");
   try {
-    const { _id } = req.params;
-    const user = await getProductById(_id);
-    console.log(user);
+    const product = await getProduct();
 
-    if (user._id) {
+    if (product) {
       return res.json({
         status: "success",
         message: "fetch success",
-        user,
+        product,
       });
     }
+
+    res.json({
+      status: "fail",
+      message: "fetch unsuccess",
+      product,
+    });
   } catch (error) {
     throw new Error(error.message);
   }

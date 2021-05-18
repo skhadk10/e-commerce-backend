@@ -20,5 +20,5 @@ Content-Type:  application/json
 
 
 ### product display 
-GET  http://localhost:8000/api/v1/productdisplay/60a20dfb7fdc67321010e08e
+GET  http://localhost:8000/api/v1/productdisplay
 
