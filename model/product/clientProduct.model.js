@@ -11,3 +11,17 @@ export const getProduct = () => {
     }
   });
 };
+export const getProductBySlug = (slugvalue) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await ClientProdSchema.find({
+        slug: { $in: slugvalue },
+      });
+
+      console.log("from model", result);
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};

@@ -23,10 +23,12 @@ mongoClient();
 import userRouter from "./router/user.Router.js";
 import ClientloginRouter from "./router/login.Router.js";
 import productDisplayRouter from "./router/product.Router.js";
+import productDisplayBySlugRouter from "./router/slugproduct.Router.js";
 // APIS
 app.use("/api/v1/Clientuser", userRouter);
 app.use("/api/v1/Clientlogin", ClientloginRouter);
 app.use("/api/v1/productdisplay", productDisplayRouter);
+app.use("/api/v1/Prodslug", productDisplayBySlugRouter);
 
 app.use("/", (req, res) => {
   res.send("hellow there");
