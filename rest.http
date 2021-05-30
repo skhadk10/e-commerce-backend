@@ -22,6 +22,13 @@ Content-Type:  application/json
 ### product display 
 GET  http://localhost:8000/api/v1/productdisplay
 
+
 ### product display 
+POST  http://localhost:8000/api/v1/productdisplay/60a519b772a67725bcd40b34
+
+### productslug display 
 GET  http://localhost:8000/api/v1/slug/apple
+
+### product display 
+GET  http://localhost:8000/api/v1/Category
 

@@ -25,3 +25,18 @@ export const getProductBySlug = (slugvalue) => {
     }
   });
 };
+
+export const getcategoryByCatId = (category) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await ClientProdSchema.find({
+        categories: { $in: category },
+      });
+
+      console.log("from model", result);
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};

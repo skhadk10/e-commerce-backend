@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getcategoryByCatId,
   getProduct,
   // getProductBySlug,
 } from "../model/product/clientProduct.model.js";
@@ -54,4 +55,21 @@ router.get("/", async (req, res) => {
 //     throw new Error(error.message);
 //   }
 // });
+
+router.post("/:_id?", async (req, res) => {
+  try {
+    const { _id } = req.params;
+    console.log("from router", _id);
+
+    const result = await getcategoryByCatId(_id);
+
+    return res.json({
+      status: "success",
+      message: "fetch success",
+      result,
+    });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+});
 export default router;
