@@ -24,7 +24,7 @@ GET  http://localhost:8000/api/v1/productdisplay
 
 
 ### product display 
-GET  http://localhost:8000/api/v1/Categoryproductdisplay/60a312210bf0e52780a3ec9b
+GET  http://localhost:8000/api/v1/Categoryproductdisplay/60b5baf2c1752a37cc2e00fa
 
 ### productslug display 
 GET  http://localhost:8000/api/v1/slug/apple
