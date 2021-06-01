@@ -56,20 +56,4 @@ router.get("/", async (req, res) => {
 //   }
 // });
 
-router.post("/:_id?", async (req, res) => {
-  try {
-    const { _id } = req.params;
-    console.log("from router", _id);
-
-    const result = await getcategoryByCatId(_id);
-
-    return res.json({
-      status: "success",
-      message: "fetch success",
-      result,
-    });
-  } catch (error) {
-    throw new Error(error.message);
-  }
-});
 export default router;

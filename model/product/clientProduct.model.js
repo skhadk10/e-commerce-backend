@@ -26,11 +26,11 @@ export const getProductBySlug = (slugvalue) => {
   });
 };
 
-export const getcategoryByCatId = (category) => {
+export const getcategoryByCatId = (_id) => {
   return new Promise(async (resolve, reject) => {
     try {
       const result = await ClientProdSchema.find({
-        categories: { $in: category },
+        categories: { $in: _id },
       });
 
       console.log("from model", result);
