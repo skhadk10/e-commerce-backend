@@ -40,3 +40,17 @@ export const getcategoryByCatId = (_id) => {
     }
   });
 };
+export const deleteSingleCartItem = (_id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await ClientProdSchema.findByIdAndDelete({
+        _id 
+      });
+
+      console.log("from model", result);
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};

@@ -26,6 +26,7 @@ import productDisplayRouter from "./router/product.Router.js";
 import productDisplayBySlugRouter from "./router/slugproduct.Router.js";
 import CategoryRouter from "./router/CategoryRouter.js";
 import CategoryProductRouter from "./router/CategoryProductRouter.js";
+import TokenRouter from "./router/TokenRouter.js";
 // APIS
 app.use("/api/v1/Clientuser", userRouter);
 app.use("/api/v1/Clientlogin", ClientloginRouter);
@@ -33,6 +34,7 @@ app.use("/api/v1/productdisplay", productDisplayRouter);
 app.use("/api/v1/Categoryproductdisplay", CategoryProductRouter);
 app.use("/api/v1/Prodslug", productDisplayBySlugRouter);
 app.use("/api/v1/Category", CategoryRouter);
+app.use("/api/v1/token", TokenRouter);
 
 app.use("/", (req, res) => {
   res.send("hellow there");

@@ -23,6 +23,17 @@ export const getUserByEmail = (email) => {
     }
   });
 };
+export const getUserByEmailAndRefreshJWT = ({email,refreshJWT}) => {
+  return new Promise((resolve, reject) => {
+    try {
+      ClientUsersSchema.findOne({ email, "refreshJWT.token":refreshJWT })
+        .then((data) => resolve(data))
+        .catch((error) => reject(error));
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
 export const storeRefresJWT = (_id, token) => {
   return new Promise((resolve, reject) => {
     try {
