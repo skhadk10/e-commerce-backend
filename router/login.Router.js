@@ -39,6 +39,7 @@ router.post("/", loginValidation, async (req, res) => {
     res.json({
       status: "success",
       message: "welcome to the page",
+      message2: "welcome to the page",
       user,
       accessJWT,
       refreshJWT,

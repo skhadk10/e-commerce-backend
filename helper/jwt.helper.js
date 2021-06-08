@@ -5,7 +5,7 @@ import { storeRefresJWT } from "../model/user/user.model.js";
 export const createAccessJWT = (email, _id) => {
   return new Promise((resolve, reject) => {
     try {
-      var accessJWT = jwt.sign({ email }, process.env.JWT_ACCESS_SECRET, {
+      var accessJWT = jwt.sign({ email }, process.env.JWT_ACCESS_SECRECT, {
         expiresIn: "20m",
       });
       // creating new table and storing accessJWT and user_id. its storing the accessJWT of individual user email and id in database
@@ -25,7 +25,7 @@ export const createAccessJWT = (email, _id) => {
 export const createRefreshJWT = (email, _id) => {
   return new Promise((resolve, reject) => {
     try {
-      var refreshJWT = jwt.sign({ email }, process.env.JWT_REFRESH_SECRET, {
+      var refreshJWT = jwt.sign({ email }, process.env.JWT_REFRESH_SECRECT, {
         expiresIn: "20d",
       });
       storeRefresJWT(_id, refreshJWT);
