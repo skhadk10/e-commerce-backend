@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
-import { storeAccessJwt } from "../ClientSession/ClientSession.model.js";
+import { storeAccessJwt } from "../model/ClientSession/ClientSession.model.js";
+
 import { storeRefresJWT } from "../model/user/user.model.js";
 
 export const createAccessJWT = (email, _id) => {
