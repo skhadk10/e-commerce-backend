@@ -5,7 +5,7 @@ Content-Type:  application/json
 {
   "fName":"sanish",
   "lName":"khadka",
-    "email":"rickeykhd@gmail.com",
+    "email":"amrit@gmail.com",
     "password": "123456",
     "role":"user"
 }
@@ -14,7 +14,7 @@ POST http://localhost:8000/api/v1/Clientlogin
 Content-Type:  application/json
    
 {
-     "email":"sanishkhadka1@gmail.com",
+     "email":"amrit@gmail.com",
     "password": "123456"
 }
 
@@ -30,5 +30,7 @@ GET  http://localhost:8000/api/v1/Categoryproductdisplay/60b5baf2c1752a37cc2e00f
 GET  http://localhost:8000/api/v1/slug/apple
 
 ### product display 
+
+
 GET  http://localhost:8000/api/v1/Category
 

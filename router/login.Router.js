@@ -15,7 +15,7 @@ router.post("/", loginValidation, async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await getUserByEmail(email);
-    console.log(user);
+    console.log(user, ",,,,,,,,,,");
 
     if (!user._id) {
       return res.json({
@@ -26,6 +26,7 @@ router.post("/", loginValidation, async (req, res) => {
 
     const dbmashPass = user.password;
     const result = await comparePassword(password, dbmashPass);
+    console.log(result, "result");
     user.password = undefined;
     if (!result) {
       return res.json({

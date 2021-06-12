@@ -13,6 +13,7 @@ export const createUser = (userObj) => {
   });
 };
 export const getUserByEmail = (email) => {
+  console.log(email, ".......");
   return new Promise((resolve, reject) => {
     try {
       ClientUsersSchema.findOne({ email })
@@ -23,10 +24,10 @@ export const getUserByEmail = (email) => {
     }
   });
 };
-export const getUserByEmailAndRefreshJWT = ({email,refreshJWT}) => {
+export const getUserByEmailAndRefreshJWT = ({ email, refreshJWT }) => {
   return new Promise((resolve, reject) => {
     try {
-      ClientUsersSchema.findOne({ email, "refreshJWT.token":refreshJWT })
+      ClientUsersSchema.findOne({ email, "refreshJWT.token": refreshJWT })
         .then((data) => resolve(data))
         .catch((error) => reject(error));
     } catch (error) {
@@ -37,12 +38,13 @@ export const getUserByEmailAndRefreshJWT = ({email,refreshJWT}) => {
 export const storeRefresJWT = (_id, token) => {
   return new Promise((resolve, reject) => {
     try {
-      ClientUsersSchema.findOneAndUpdate({ _id },
+      ClientUsersSchema.findOneAndUpdate(
+        { _id },
         {
-         $set:{"refreshJWT.token":token,"refreshJWT.addedAt":Date.now()}
-      },
-      {new:true}
-       )
+          $set: { "refreshJWT.token": token, "refreshJWT.addedAt": Date.now() },
+        },
+        { new: true }
+      )
         .then((data) => resolve(data))
         .catch((error) => reject(error));
     } catch (error) {
@@ -51,7 +53,7 @@ export const storeRefresJWT = (_id, token) => {
   });
 };
 
-export const deleteRefreshTokenById = (_id ) => {
+export const deleteRefreshTokenById = (_id) => {
   return new Promise((resolve, reject) => {
     try {
       UsersSchema.findOneAndUpdate(
@@ -62,9 +64,9 @@ export const deleteRefreshTokenById = (_id ) => {
         { new: true }
       )
         .then((data) => resolve(data))
-        
+
         .catch((error) => reject(error));
-        console.log("from  model logout refreshjwt ",data);
+      console.log("from  model logout refreshjwt ", data);
     } catch (error) {
       reject(error);
     }
