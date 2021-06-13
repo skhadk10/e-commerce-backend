@@ -1,14 +1,29 @@
 import express from "express";
 import { hashPassword } from "../helper/bycrpt.js";
 import { newUservalidation } from "../middleware/formvalidation.js";
-import { createUser } from "../model/user/user.model.js";
+import { createUser, getUserByEmail } from "../model/user/user.model.js";
 
 const router = express.Router();
 
 router.all("*", (req, res, next) => {
   next();
 });
-
+router.post("/:email", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const result = await getUserByEmail(email);
+    res.json({
+      status: "user detail here",
+      message: "welcome",
+      result,
+    });
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: "user not here",
+    });
+  }
+});
 router.post("/", newUservalidation, async (req, res) => {
   try {
     //1.get and destructure password from  frontend
