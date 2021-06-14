@@ -8,7 +8,7 @@ router.all("*", (req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  console.log("hello from router");
+  console.log("hello from category router");
   try {
     const result = await getCategories(req.body);
 

@@ -14,10 +14,21 @@ POST http://localhost:8000/api/v1/Clientlogin
 Content-Type:  application/json
    
 {
-     "email":"amrit@gmail.com",
+     "email":"rickeykhd@gmail.com",
     "password": "123456"
 }
 
+### logout user
+POST http://localhost:8000/api/v1/LogOut
+Content-Type:  application/json
+   
+{
+     "_id":"60a261e7a8a1ac189ceba1f2"
+   
+}
+### display userprofile
+POST  http://localhost:8000/api/v1/token
+Authorization: eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2tleWtoZEBnbWFpbC5jb20iLCJpYXQiOjE2MjM2NjkwOTksImV4cCI6MTYyNTM5NzA5OX0.YHAAqmwmzfckixiDa9SWSJRyprfb2B8Z2R-hGdCd-8A
 
 ### product display 
 GET  http://localhost:8000/api/v1/productdisplay

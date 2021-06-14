@@ -19,8 +19,8 @@ export const getAccessByToken = async (accessJWT) => {
 
 export const deleteAccessTokenById = (userId) => {
   try {
-    SessionSchema.findOneAndDelete( {userId} )
-    .then((data)=>console.log(data)) 
+    ClientSessionsSchema.findOneAndDelete( userId )
+    .then((data)=>console.log("delete access by id",data)) 
     .catch((error)=>console.log(error)) 
   } catch (error) {
    console.log(error);

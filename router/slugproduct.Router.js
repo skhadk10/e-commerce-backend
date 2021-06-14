@@ -11,7 +11,7 @@ router.all("*", (req, res, next) => {
 });
 
 router.get("/:slug", async (req, res) => {
-  console.log("hello from router");
+ 
   try {
     let { slug } = req.params;
     const product = await getProductBySlug(slug);

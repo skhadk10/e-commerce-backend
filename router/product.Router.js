@@ -12,7 +12,7 @@ router.all("*", (req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  console.log("hello from router");
+  console.log("hello from  Product router");
   try {
     const product = await getProduct();
 

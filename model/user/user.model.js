@@ -56,7 +56,7 @@ export const storeRefresJWT = (_id, token) => {
 export const deleteRefreshTokenById = (_id) => {
   return new Promise((resolve, reject) => {
     try {
-      UsersSchema.findOneAndUpdate(
+      ClientUsersSchema.findOneAndUpdate(
         { _id },
         {
           $set: { "refreshJWT.token": "", "refreshJWT.addedAt": Date.now() },
@@ -66,7 +66,6 @@ export const deleteRefreshTokenById = (_id) => {
         .then((data) => resolve(data))
 
         .catch((error) => reject(error));
-      console.log("from  model logout refreshjwt ", data);
     } catch (error) {
       reject(error);
     }

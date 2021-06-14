@@ -63,4 +63,28 @@ res.status(403).json({
     throw new Error(error.message);
   }
 });
+router.post("/", async (req, res) => {
+
+  try {
+    const { token } = req.body;
+    console.log("userprofile",token);
+    if (token) {
+      const { email } = await verifyRefreshjwt(token);
+      if (email) {
+        const user = await getUserByEmail(email);
+        user._id &&
+          res.json({
+            status: "user detail here",
+            message: "welcome to the user page",
+            user,
+          });
+      }
+    }
+  } catch (error) {
+    res.json({
+      status: "error",
+      message: "user not here",
+    });
+  }
+});
 export default router;
