@@ -15,7 +15,7 @@ router.get("/:_id?", async (req, res) => {
   const { _id } = req.params;
   try {
     const result = await getcategoryByCatId(_id);
-    console.log("from categoryProduct", result);
+  
     res.json({
       status: "success",
       message: "fetch success",

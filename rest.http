@@ -23,13 +23,16 @@ POST http://localhost:8000/api/v1/LogOut
 Content-Type:  application/json
    
 {
-     "_id":"60a261e7a8a1ac189ceba1f2"
+     "_id":"60bdc7d3d454380ec06d7ffc"
    
 }
 ### display userprofile
-POST  http://localhost:8000/api/v1/token
-Authorization: eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2tleWtoZEBnbWFpbC5jb20iLCJpYXQiOjE2MjM2NjkwOTksImV4cCI6MTYyNTM5NzA5OX0.YHAAqmwmzfckixiDa9SWSJRyprfb2B8Z2R-hGdCd-8A
-
+GET   http://localhost:8000/api/v1/profile
+Content-Type:  application/json
+   
+{
+     "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2tleWtoZEBnbWFpbC5jb20iLCJpYXQiOjE2MjM4OTY0NDIsImV4cCI6MTYyNTYyNDQ0Mn0.tBLFRuKH6Cslyhm5l0t0IXnsRMLJN_VjudIAvURRA7g"
+}
 ### product display 
 GET  http://localhost:8000/api/v1/productdisplay
 

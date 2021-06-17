@@ -28,6 +28,7 @@ import CategoryRouter from "./router/CategoryRouter.js";
 import CategoryProductRouter from "./router/CategoryProductRouter.js";
 import TokenRouter from "./router/TokenRouter.js";
 import LogOutRouter from "./router/LogOut.js";
+import userProileRouter from "./router/UserProfile.js";
 // APIS
 app.use("/api/v1/Clientuser", userRouter);
 app.use("/api/v1/Clientlogin", ClientloginRouter);
@@ -36,6 +37,7 @@ app.use("/api/v1/Categoryproductdisplay", CategoryProductRouter);
 app.use("/api/v1/Prodslug", productDisplayBySlugRouter);
 app.use("/api/v1/Category", CategoryRouter);
 app.use("/api/v1/token", TokenRouter);
+app.use("/api/v1/profile", userProileRouter);
 app.use("/api/v1/logOut", LogOutRouter);
 
 app.use("/", (req, res) => {
