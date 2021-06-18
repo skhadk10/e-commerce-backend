@@ -2,10 +2,7 @@ import express from "express";
 
 import { verifyRefreshjwt } from "../helper/jwt.helper.js";
 
-import {
-  getUserByEmail,
- 
-} from "../model/user/user.model.js";
+import { getUserByEmail } from "../model/user/user.model.js";
 
 const router = express.Router();
 
@@ -23,14 +20,19 @@ router.post("/", async (req, res) => {
       const { email } = await verifyRefreshjwt(token);
       if (email) {
         const user = await getUserByEmail(email);
-        user._id && 
+        user._id &&
           res.json({
-            status: "user detail here",
+            status: "success",
             message: "welcome to the user page",
             user,
           });
+        return;
       }
     }
+    res.json({
+      status: "error",
+      message: "user unavailable",
+    });
   } catch (error) {
     res.json({
       status: "error",

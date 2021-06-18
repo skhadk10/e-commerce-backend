@@ -13,7 +13,6 @@ export const createUser = (userObj) => {
   });
 };
 export const getUserByEmail = (email) => {
-  console.log(email, ".......");
   return new Promise((resolve, reject) => {
     try {
       ClientUsersSchema.findOne({ email })
